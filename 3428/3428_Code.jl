@@ -1,9 +1,13 @@
 using Pkg
-add.Pkg("Plots")
-add.Pkg("DataFrames")
-add.Pkg("CSV")
-add.Pkg("StatsPlots")
+
+Pkg.add("Plots")
+Pkg.add("DataFrames")
+Pkg.add("CSV")
+Pkg.add("StatsPlots")
+
 using Plots, DataFrames, CSV, StatsPlots
 
-FilePath = ""
-df = DataFrame(CSV.file())
+p = "//Users//liammartin//ECON//3428//Data//CORESTICKM159SFRBATL.csv"
+df1 = DataFrame(CSV.File(p))
+print(df1)
+
