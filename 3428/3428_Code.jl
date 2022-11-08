@@ -5,3 +5,5 @@ add.Pkg("CSV")
 add.Pkg("StatsPlots")
 using Plots, DataFrames, CSV, StatsPlots
 
+FilePath = ""
+df = DataFrame(CSV.file())
