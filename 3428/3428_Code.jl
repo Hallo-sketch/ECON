@@ -18,7 +18,10 @@ plot(df1.DATE, df1.CORESTICKM159SFRBATL, labels=["CORESTICKM159SFRBATL"], legend
 p1 = "//Users//liammartin//ECON//3428//Data//fredgraph.csv"
 df2 = DataFrame(CSV.File(p1))
 print(df2)
+s = df2[!, Not(:DATE)]
+s1 = s[!, Not(:CORESTICKM159SFRBATL)]
+s2 = s[!, Not(:PCEPILFE_PC1)]
+s = AbstractArray(s)
 using StatsKit
-print(Matrix(df2[!, Not(:DATE)]))
-MultinomialLRTest(Matrix(df2[]))
+cor(s)
 
