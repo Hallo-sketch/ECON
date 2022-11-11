@@ -21,7 +21,7 @@ print(df2)
 s = df2[!, Not(:DATE)]
 s1 = s[!, Not(:CORESTICKM159SFRBATL)]
 s2 = s[!, Not(:PCEPILFE_PC1)]
-s = AbstractArray(s)
+s = Matrix(s)
 using StatsKit
 cor(s)
 
