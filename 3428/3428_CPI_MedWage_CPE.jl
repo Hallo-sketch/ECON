@@ -19,11 +19,11 @@ p1 = plot(df1, x=:DATE, y=Col.value(:PCEPILFE,:LES1252881600Q_NBD20120101, :CPIL
     Geom.line, Guide.colorkey(title = "Metric", labels = ["PCE", "Adj. MWW", "CPI"]),
     Guide.ylabel("Points Indexed to 100 for 2012"), Guide.xlabel("Year"), 
     Coord.cartesian(xmin=Date(1980-01-01), xmax=Date(2025-01-01)),
-    Guide.title("Inflation and Real Wages Over Time"))
+    Guide.xticks(ticks=DateTime("1980-01-01"):Year(10):DateTime("2020-01-01")))
 #end
 render(p1)
 set_default_plot_size(5inch, 4inch)
-p1 |> SVG("IrWt3.svg")
+p1 |> SVG("3428/Exports/IrWt3.svg", 12cm,10cm)
 
 x = df1.LES1252881600Q_NBD20120101
 y = df1.PCEPILFE
@@ -31,5 +31,3 @@ y = df1.PCEPILFE
 crossmap(x, y, 1, 2)
 crossmap(y, x, 1, 2)
 B =jdd(x,y, B = 20)
-
-
